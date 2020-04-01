@@ -1,12 +1,5 @@
 var path = require('path');
 var express = require('express');
-const fs = require('fs');
-
-fs.readdir(path.join(process.cwd(), 'dist'), (err, files) => {
-    files.forEach(file => {
-        console.log(file);
-    });
-});
 const PORT = process.env.PORT || 3000;
 
 var app = express();
