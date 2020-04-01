@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 var app = express();
 //app.use('/client.js', staticFile(path.join(process.cwd(), 'dist/client.js'), {}));
-app.use('/', express.static(path.join(process.cwd(), 'dist')))
+console.log(process.cwd());
+app.use('/public', express.static(path.join(process.cwd(), 'dist')))
 app.get('/', (req, res) => res.send('Serving /client.js'));
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
