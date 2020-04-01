@@ -2,11 +2,6 @@ var path = require('path');
 var express = require('express');
 const fs = require('fs');
 
-fs.readdir(path.join(process.cwd(), ''), (err, files) => {
-    files.forEach(file => {
-        console.log(file);
-    });
-});
 fs.readdir(path.join(process.cwd(), 'dist'), (err, files) => {
     files.forEach(file => {
         console.log(file);
