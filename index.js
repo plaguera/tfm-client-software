@@ -1,10 +1,20 @@
-var staticFile = require('connect-static-file');
 var path = require('path');
 var express = require('express');
+const fs = require('fs');
+
+fs.readdir(path.join(process.cwd(), ''), (err, files) => {
+    files.forEach(file => {
+        console.log(file);
+    });
+});
+fs.readdir(path.join(process.cwd(), 'dist'), (err, files) => {
+    files.forEach(file => {
+        console.log(file);
+    });
+});
 const PORT = process.env.PORT || 3000;
 
 var app = express();
-//app.use('/client.js', staticFile(path.join(process.cwd(), 'dist/client.js'), {}));
 console.log(process.cwd());
 app.use('/public', express.static(path.join(process.cwd(), 'dist')))
 app.get('/', (req, res) => res.send('Serving /client.js'));
