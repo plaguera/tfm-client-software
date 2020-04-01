@@ -1,0 +1,19 @@
+{
+    "name": "tfm-client-software",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/plaguera/tfm-client-software.git",
+    "author": "Pedro Lagüera <laguerapedro@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "cd client && npx webpack --mode development src/index.tsx",
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "connect-static-file": "^2.0.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.4"
+    }
+}
